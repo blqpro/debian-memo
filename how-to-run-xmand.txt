@@ -1,0 +1,19 @@
+#LASTMILES PROJECT
+#set to compile and use xmand.c from github/blastwaves/lastmiles
+
+
+sudo apt-get update
+
+sudo apt-get install xvfb xdm xfonts-base
+
+sudo apt install libx11-dev
+
+cd lastmiles/xmand/
+
+sudo apt-get install make
+
+make -f Makefile.deb_x86_64
+
+more readme.slow
+
+./xmand 1048576 262144 -7.499252259685e-01 -1.213768124597e-02 16
