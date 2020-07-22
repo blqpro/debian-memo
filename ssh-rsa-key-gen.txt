@@ -1,0 +1,15 @@
+#LITTLE MEMO FOR SSH RSA KEY CONNECTION
+local :
+
+ssh-keygen -t rsa -b 4096
+scp /home/phobos/.ssh/id_rsa.pub mars@192.168.1.29:/home/mars/.ssh/phobos.pub
+
+server :
+
+mkdir .ssh
+
+when copy local ssh :
+
+cat ~/.ssh/phobos.pub >> ~/.ssh/authorized_keys
+
+cat ~/.ssh/authorized_keys
