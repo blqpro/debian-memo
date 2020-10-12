@@ -1,15 +1,17 @@
-#LITTLE MEMO FOR SSH RSA KEY CONNECTION
-local :
+#!/bin/bash$
+#On local workstation :
 
-ssh-keygen -t rsa -b 4096
-scp /home/phobos/.ssh/id_rsa.pub mars@192.168.1.29:/home/mars/.ssh/phobos.pub
+ssh-keygen -t rsa -b 4096 
+#choose passphrase
 
-server :
+#copy the rsa key on the server with scp via ssh*
+scp/home/NameOfWorkstation/.ssh/id_rsa.pub NameOfServer@192.168.1.2:/home/NameOfServer/.ssh/NameOfWorkstation.pub
+
+#On server :
 
 mkdir .ssh
 
-when copy local ssh :
+cat~/.ssh/NameOfWorkstation.pub >> ~/.ssh/authorized_keys
 
-cat ~/.ssh/phobos.pub >> ~/.ssh/authorized_keys
+cat~/.ssh/authorized_keys
 
-cat ~/.ssh/authorized_keys
